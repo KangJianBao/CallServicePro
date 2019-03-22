@@ -29,21 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btnStartService = new DevExpress.XtraEditors.SimpleButton();
             this.btnClearLog = new DevExpress.XtraEditors.SimpleButton();
             this.txtLog = new System.Windows.Forms.RichTextBox();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.btnStopService = new DevExpress.XtraEditors.SimpleButton();
+            this.btnStartService = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
-            // 
-            // btnStartService
-            // 
-            this.btnStartService.Location = new System.Drawing.Point(12, 12);
-            this.btnStartService.Name = "btnStartService";
-            this.btnStartService.Size = new System.Drawing.Size(86, 33);
-            this.btnStartService.TabIndex = 0;
-            this.btnStartService.Text = "启动服务";
-            this.btnStartService.Click += new System.EventHandler(this.btnStartService_Click);
             // 
             // btnClearLog
             // 
@@ -52,6 +43,7 @@
             this.btnClearLog.Size = new System.Drawing.Size(86, 33);
             this.btnClearLog.TabIndex = 0;
             this.btnClearLog.Text = "清空日志";
+            this.btnClearLog.Click += new System.EventHandler(this.btnClearLog_Click);
             // 
             // txtLog
             // 
@@ -67,12 +59,23 @@
             // 
             // btnStopService
             // 
+            this.btnStopService.ImageOptions.Image = global::CallServicePro.Properties.Resources.red;
             this.btnStopService.Location = new System.Drawing.Point(104, 12);
             this.btnStopService.Name = "btnStopService";
             this.btnStopService.Size = new System.Drawing.Size(86, 33);
             this.btnStopService.TabIndex = 4;
             this.btnStopService.Text = "停止服务";
             this.btnStopService.Click += new System.EventHandler(this.btnStopService_Click);
+            // 
+            // btnStartService
+            // 
+            this.btnStartService.ImageOptions.Image = global::CallServicePro.Properties.Resources.green;
+            this.btnStartService.Location = new System.Drawing.Point(12, 12);
+            this.btnStartService.Name = "btnStartService";
+            this.btnStartService.Size = new System.Drawing.Size(86, 33);
+            this.btnStartService.TabIndex = 0;
+            this.btnStartService.Text = "启动服务";
+            this.btnStartService.Click += new System.EventHandler(this.btnStartService_Click);
             // 
             // FrmMain
             // 
@@ -83,6 +86,8 @@
             this.Controls.Add(this.txtLog);
             this.Controls.Add(this.btnClearLog);
             this.Controls.Add(this.btnStartService);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FrmMain";
             this.Text = "叫号服务端";
             this.ResumeLayout(false);

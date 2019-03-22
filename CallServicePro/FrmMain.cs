@@ -49,5 +49,10 @@ namespace CallServicePro
             btnStartService.Enabled = true;
             btnStopService.Enabled = false;
         }
+
+        private void btnClearLog_Click(object sender, EventArgs e)
+        {
+            txtLog.Text = "";
+        }
     }
 }
