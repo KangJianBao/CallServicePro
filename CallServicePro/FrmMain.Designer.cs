@@ -41,7 +41,7 @@
             this.btnClearLog.Location = new System.Drawing.Point(196, 12);
             this.btnClearLog.Name = "btnClearLog";
             this.btnClearLog.Size = new System.Drawing.Size(86, 33);
-            this.btnClearLog.TabIndex = 0;
+            this.btnClearLog.TabIndex = 3;
             this.btnClearLog.Text = "清空日志";
             this.btnClearLog.Click += new System.EventHandler(this.btnClearLog_Click);
             // 
@@ -50,7 +50,7 @@
             this.txtLog.Location = new System.Drawing.Point(12, 51);
             this.txtLog.Name = "txtLog";
             this.txtLog.Size = new System.Drawing.Size(463, 250);
-            this.txtLog.TabIndex = 3;
+            this.txtLog.TabIndex = 0;
             this.txtLog.Text = "";
             // 
             // defaultLookAndFeel1

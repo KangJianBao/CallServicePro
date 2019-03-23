@@ -21,6 +21,8 @@ namespace CallServicePro
         private string ServerListen = ConfigurationManager.AppSettings["ServerListen"];
         //声明一个用于连接通信的Socket
         private Socket socketSend;
+        //向主窗体发送日志信息委托变量
+        public ShowMsgDelegate MsgDelegate;
         public FrmVideoPlayer()
         {
             InitializeComponent();
@@ -31,6 +33,7 @@ namespace CallServicePro
             //初始化Split
             splitContainerControl1.Panel1.BackColor = Color.FromArgb(0, 71, 182);
             lblRoomName.BackColor = Color.FromArgb(0, 71, 182);
+            
 
         }
         
@@ -82,10 +85,6 @@ namespace CallServicePro
             }
         }
 
-        void ShowMsg(String str)
-        {
-            
-        }
         /// <summary>
         /// 实时获取日期时间
         /// </summary>
@@ -124,6 +123,11 @@ namespace CallServicePro
         {
             //Graphics g = e.Graphics;
             //g.DrawImage(new Bitmap(Properties.Resources.title), 0, 0);
+        }
+
+        private void FrmVideoPlayer_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }

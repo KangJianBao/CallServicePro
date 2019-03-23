@@ -23,6 +23,7 @@ namespace CallServicePro
             btnStartService.Enabled = false;
             btnStopService.Enabled = true;
             frmVideo = new FrmVideoPlayer();
+            frmVideo.MsgDelegate = this.ShowMsg;
             frmVideo.Show();
             ShowMsg("叫号服务已启动");
            
@@ -53,6 +54,9 @@ namespace CallServicePro
         private void btnClearLog_Click(object sender, EventArgs e)
         {
             txtLog.Text = "";
+            txtLog.Focus();
         }
     }
+
+    public delegate void ShowMsgDelegate(String msg);
 }
