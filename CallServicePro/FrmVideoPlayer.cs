@@ -119,7 +119,19 @@ namespace CallServicePro
             }
 
         }
-
+        /// <summary>
+        /// 滚动叫号文字
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void callPatientTimer_Tick(object sender, EventArgs e)
+        {
+            lblCallInfo.Top += 1;
+            if (lblCallInfo.Bottom > CallPatientBox.Height)
+            {
+                lblCallInfo.Top = 0;
+            }
+        }
         private void groupControl1_Paint(object sender, PaintEventArgs e)
         {
             //Graphics g = e.Graphics;
@@ -130,5 +142,7 @@ namespace CallServicePro
         {
            
         }
+
+       
     }
 }
