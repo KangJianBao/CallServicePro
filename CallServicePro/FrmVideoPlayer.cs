@@ -32,7 +32,8 @@ namespace CallServicePro
 
             //初始化Split
             splitContainerControl1.Panel1.BackColor = Color.FromArgb(0, 71, 182);
-            lblRoomName.BackColor = Color.FromArgb(0, 71, 182);
+            lblRoomName.BackColor = Color.Transparent;
+            lblRoomName.Parent = lblRootNameBG;
             
 
         }
