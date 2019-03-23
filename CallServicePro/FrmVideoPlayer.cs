@@ -30,8 +30,8 @@ namespace CallServicePro
 
             //初始化Split
             splitContainerControl1.Panel1.BackColor = Color.FromArgb(0, 71, 182);
+            lblRoomName.BackColor = Color.FromArgb(0, 71, 182);
 
-            
         }
         
         /// <summary>
@@ -118,6 +118,12 @@ namespace CallServicePro
                 lblScrollPlay.Left = this.Width;
             }
 
+        }
+
+        private void groupControl1_Paint(object sender, PaintEventArgs e)
+        {
+            //Graphics g = e.Graphics;
+            //g.DrawImage(new Bitmap(Properties.Resources.title), 0, 0);
         }
     }
 }
