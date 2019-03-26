@@ -11,27 +11,29 @@ using DevExpress.XtraEditors;
 using System.Net.Sockets;
 using System.Net;
 using System.Configuration;
+using System.Threading;
 
 namespace CallServicePro
 {
     public partial class FrmVideoPlayer : DevExpress.XtraEditors.XtraForm
     {
-        private string ServerIP= ConfigurationManager.AppSettings["ServerIP"];
-        private string ServerPort = ConfigurationManager.AppSettings["ServerPort"];
-        private string ServerListen = ConfigurationManager.AppSettings["ServerListen"];
+        private string serverIP= ConfigurationManager.AppSettings["ServerIP"];
+        private string serverPort = ConfigurationManager.AppSettings["ServerPort"];
+        private string serverListen = ConfigurationManager.AppSettings["ServerListen"];
         //声明一个用于连接通信的Socket
         private Socket socketSend;
-        //向主窗体发送日志信息委托变量
-        public ShowMsgDelegate MsgDelegate;
+        //向主窗体发送日志信息委托变量 
+        public ShowMsgDelegate msgDelegate;
         public FrmVideoPlayer()
         {
             InitializeComponent();
            
             //初始化日期时间数据
             InitDateTime();
-
-            //初始化Split
+           
+            //给Split左侧Pancel1设置背景颜色
             splitContainerControl1.Panel1.BackColor = Color.FromArgb(0, 71, 182);
+            //科室名称
             lblRoomName.BackColor = Color.Transparent;
             lblRoomName.Parent = lblRootNameBG;
             
@@ -61,16 +63,18 @@ namespace CallServicePro
         {
             //【第一步】创建一个监听的socket
             Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            IPAddress ip = IPAddress.Parse(ServerIP);
-            IPEndPoint port = new IPEndPoint(ip, Convert.ToInt32(ServerPort));
+            IPAddress ip = IPAddress.Parse(serverIP);
+            IPEndPoint port = new IPEndPoint(ip, Convert.ToInt32(serverPort));
             //【第二步】绑定监听端口
             socket.Bind(port);
             //【第三步】Listen
-            socket.Listen(Convert.ToInt32(ServerListen));
-        }
+            socket.Listen(Convert.ToInt32(serverListen));
 
-        
-        
+            Thread th = new Thread(SocketAccept);
+            th.IsBackground = true;
+            th.Start(socket);
+            msgDelegate("叫号服务已启动，等待客户端连接");
+        }
 
         /// <summary>
         /// 循环等待客户端的连接
@@ -83,7 +87,33 @@ namespace CallServicePro
             while (true)
             {
                 socketSend = socket.Accept();
+
+                Thread th = new Thread(Recive);
+                th.IsBackground = true;
+                th.Start(socketSend);
             }
+        }
+        /// <summary>
+        /// 服务器端不停的接收客户端发来的消息
+        /// </summary>
+        /// <param name="o"></param>
+        private void Recive(object o)
+        {
+            Socket socketSend = o as Socket;
+            while (true)
+            {
+                byte[] buffer = new byte[1024 * 1024 * 2];
+                //实际接收到的有效字节数
+                int r = socketSend.Receive(buffer);
+                if (r == 0) break;
+                string str = Encoding.UTF8.GetString(buffer, 0, r);
+                msgDelegate(socketSend.RemoteEndPoint.ToString() + ":" + str);
+            }
+
+        }
+        void SendMsg(String msg,int tag)
+        {
+
         }
 
         /// <summary>
@@ -119,6 +149,7 @@ namespace CallServicePro
             }
 
         }
+
         /// <summary>
         /// 滚动叫号文字
         /// </summary>
@@ -132,15 +163,21 @@ namespace CallServicePro
                 lblCallInfo.Top = 0;
             }
         }
-        private void groupControl1_Paint(object sender, PaintEventArgs e)
+       
+        /// <summary>
+        /// 扩展屏显示
+        /// </summary>
+        private void ShowExpansionScreen()
         {
-            //Graphics g = e.Graphics;
-            //g.DrawImage(new Bitmap(Properties.Resources.title), 0, 0);
+            this.Left = Screen.PrimaryScreen.Bounds.Width;
+            this.Top = 0;
         }
 
         private void FrmVideoPlayer_Load(object sender, EventArgs e)
         {
-           
+            //初始化Socket
+            InitSocket();
+
         }
 
        

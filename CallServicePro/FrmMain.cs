@@ -23,13 +23,15 @@ namespace CallServicePro
             btnStartService.Enabled = false;
             btnStopService.Enabled = true;
             frmVideo = new FrmVideoPlayer();
-            frmVideo.MsgDelegate = this.ShowMsg;
-            frmVideo.Show();
-            ShowMsg("叫号服务已启动");
-           
+            frmVideo.msgDelegate = this.ShowMsg;
+            frmVideo.Show();           
         }
 
-        
+        private void ShowExpansionScreen()
+        {
+
+        }
+
 
         void ShowMsg(String str)
         {
