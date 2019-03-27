@@ -12,6 +12,8 @@ using System.Net.Sockets;
 using System.Net;
 using System.Configuration;
 using System.Threading;
+using System.Speech.Synthesis;
+using System.Speech;
 
 namespace CallServicePro
 {
@@ -20,6 +22,7 @@ namespace CallServicePro
         private string serverIP= ConfigurationManager.AppSettings["ServerIP"];
         private string serverPort = ConfigurationManager.AppSettings["ServerPort"];
         private string serverListen = ConfigurationManager.AppSettings["ServerListen"];
+
         //声明一个用于连接通信的Socket
         private Socket socketSend;
         //向主窗体发送日志信息委托变量 
@@ -34,6 +37,7 @@ namespace CallServicePro
             //给Split左侧Pancel1设置背景颜色
             splitContainerControl1.Panel1.BackColor = Color.FromArgb(0, 71, 182);
             //科室名称
+            lblRoomName.Text = ConfigurationManager.AppSettings["RoomName"];
             lblRoomName.BackColor = Color.Transparent;
             lblRoomName.Parent = lblRootNameBG;
             
@@ -116,10 +120,6 @@ namespace CallServicePro
             }
 
         }
-        void SendMsg(String msg,int tag)
-        {
-
-        }
 
         /// <summary>
         /// 实时获取日期时间
@@ -185,6 +185,27 @@ namespace CallServicePro
 
         }
 
-       
+        
+        /// <summary>
+        /// 语音叫号
+        /// </summary>
+        /// <param name="text">朗读的文本</param>
+        /// <param name="speechnum">朗读次数</param>
+        /// <param name="rate">语速 取值范围:[-10,10]</param>
+        /// <param name="volume">音量 取值范围：[0,100]</param>
+        public static void CallPaitent(string text, int speechnum = 2, int rate = 0, int volume = 100)
+        {
+            SpeechSynthesizer speech = new SpeechSynthesizer
+            {
+                Rate = rate,
+                Volume = volume,
+            };
+            for (int i = 1; i <= speechnum; i++)
+            {
+                speech.Speak(text);
+            }
+
+        }
+
     }
 }
