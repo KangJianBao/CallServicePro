@@ -95,6 +95,11 @@ namespace CallServicePro
         }
         /// <summary>
         /// 服务器端不停的接收客户端发来的消息
+        /// 接收协议： 
+        ///         0 叫号信息
+        ///         1 当前病人
+        ///         2 准备病人
+        ///         3 等待人数
         /// </summary>
         /// <param name="o"></param>
         private void Recive(object o)
