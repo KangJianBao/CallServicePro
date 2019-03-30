@@ -46,7 +46,7 @@
             this.lblCallInfo = new DevExpress.XtraEditors.LabelControl();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.lblWaitCountPatient = new DevExpress.XtraEditors.LabelControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.lblNextPatient = new DevExpress.XtraEditors.LabelControl();
@@ -162,7 +162,7 @@
             this.lblRoomName.Name = "lblRoomName";
             this.lblRoomName.Size = new System.Drawing.Size(261, 60);
             this.lblRoomName.TabIndex = 1;
-            this.lblRoomName.Text = "放疗科加速器一室";
+            this.lblRoomName.Text = "放疗科加速器";
             // 
             // lblRootNameBG
             // 
@@ -266,7 +266,7 @@
             // 
             this.groupControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.groupControl4.Controls.Add(this.labelControl3);
-            this.groupControl4.Controls.Add(this.labelControl5);
+            this.groupControl4.Controls.Add(this.lblWaitCountPatient);
             this.groupControl4.Location = new System.Drawing.Point(12, 338);
             this.groupControl4.Name = "groupControl4";
             this.groupControl4.Size = new System.Drawing.Size(398, 160);
@@ -288,23 +288,23 @@
             this.labelControl3.TabIndex = 0;
             this.labelControl3.Text = "等待人数:";
             // 
-            // labelControl5
+            // lblWaitCountPatient
             // 
-            this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblWaitCountPatient.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 28F);
-            this.labelControl5.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Appearance.Options.UseForeColor = true;
-            this.labelControl5.Appearance.Options.UseTextOptions = true;
-            this.labelControl5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl5.Location = new System.Drawing.Point(203, 93);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
-            this.labelControl5.Size = new System.Drawing.Size(172, 46);
-            this.labelControl5.TabIndex = 1;
-            this.labelControl5.Text = "1";
+            this.lblWaitCountPatient.Appearance.Font = new System.Drawing.Font("Tahoma", 28F);
+            this.lblWaitCountPatient.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblWaitCountPatient.Appearance.Options.UseFont = true;
+            this.lblWaitCountPatient.Appearance.Options.UseForeColor = true;
+            this.lblWaitCountPatient.Appearance.Options.UseTextOptions = true;
+            this.lblWaitCountPatient.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblWaitCountPatient.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblWaitCountPatient.Location = new System.Drawing.Point(203, 93);
+            this.lblWaitCountPatient.Name = "lblWaitCountPatient";
+            this.lblWaitCountPatient.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.lblWaitCountPatient.Size = new System.Drawing.Size(172, 46);
+            this.lblWaitCountPatient.TabIndex = 1;
+            this.lblWaitCountPatient.Text = "1";
             // 
             // groupControl3
             // 
@@ -520,6 +520,6 @@
         private DevExpress.XtraEditors.LabelControl lblCurrentPatient;
         private DevExpress.XtraEditors.GroupControl groupControl4;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.LabelControl lblWaitCountPatient;
     }
 }
