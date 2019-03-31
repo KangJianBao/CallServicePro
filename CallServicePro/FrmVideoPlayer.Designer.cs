@@ -36,6 +36,8 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.lblRoomName = new DevExpress.XtraEditors.LabelControl();
+            this.lblRootNameBG = new System.Windows.Forms.PictureBox();
+            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.lblScrollPlay = new DevExpress.XtraEditors.LabelControl();
             this.spTimer = new System.Windows.Forms.Timer(this.components);
@@ -48,20 +50,17 @@
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.lblNextPatient = new DevExpress.XtraEditors.LabelControl();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.lblCurrentPatient = new DevExpress.XtraEditors.LabelControl();
             this.CurrentPatientBox = new DevExpress.XtraEditors.GroupControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.lblCurrentInfo = new DevExpress.XtraEditors.LabelControl();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.callPatientTimer = new System.Windows.Forms.Timer(this.components);
-            this.lblRootNameBG = new System.Windows.Forms.PictureBox();
-            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lblRootNameBG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
@@ -72,13 +71,9 @@
             this.groupControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
-            this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CurrentPatientBox)).BeginInit();
             this.CurrentPatientBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblRootNameBG)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // dtTimer
@@ -164,6 +159,29 @@
             this.lblRoomName.TabIndex = 1;
             this.lblRoomName.Text = "放疗科加速器";
             // 
+            // lblRootNameBG
+            // 
+            this.lblRootNameBG.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblRootNameBG.Image = global::CallServicePro.Properties.Resources.title;
+            this.lblRootNameBG.Location = new System.Drawing.Point(0, 0);
+            this.lblRootNameBG.Name = "lblRootNameBG";
+            this.lblRootNameBG.Size = new System.Drawing.Size(322, 99);
+            this.lblRootNameBG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.lblRootNameBG.TabIndex = 2;
+            this.lblRootNameBG.TabStop = false;
+            // 
+            // pictureEdit1
+            // 
+            this.pictureEdit1.EditValue = global::CallServicePro.Properties.Resources.logo;
+            this.pictureEdit1.Location = new System.Drawing.Point(3, 12);
+            this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
+            this.pictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit1.Size = new System.Drawing.Size(329, 79);
+            this.pictureEdit1.TabIndex = 0;
+            // 
             // panelControl2
             // 
             this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -201,7 +219,6 @@
             this.splitContainerControl1.Panel1.Controls.Add(this.CallPatientBox);
             this.splitContainerControl1.Panel1.Controls.Add(this.groupControl4);
             this.splitContainerControl1.Panel1.Controls.Add(this.groupControl3);
-            this.splitContainerControl1.Panel1.Controls.Add(this.groupControl2);
             this.splitContainerControl1.Panel1.Controls.Add(this.CurrentPatientBox);
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.axWindowsMediaPlayer1);
@@ -216,9 +233,9 @@
             this.CallPatientBox.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.CallPatientBox.Controls.Add(this.lblCallInfo);
             this.CallPatientBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.CallPatientBox.Location = new System.Drawing.Point(0, 504);
+            this.CallPatientBox.Location = new System.Drawing.Point(0, 429);
             this.CallPatientBox.Name = "CallPatientBox";
-            this.CallPatientBox.Size = new System.Drawing.Size(420, 71);
+            this.CallPatientBox.Size = new System.Drawing.Size(420, 146);
             this.CallPatientBox.TabIndex = 2;
             this.CallPatientBox.Text = "groupControl2";
             // 
@@ -233,7 +250,7 @@
             this.lblCallInfo.Appearance.Options.UseTextOptions = true;
             this.lblCallInfo.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblCallInfo.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.lblCallInfo.Location = new System.Drawing.Point(3, 3);
+            this.lblCallInfo.Location = new System.Drawing.Point(0, 46);
             this.lblCallInfo.Name = "lblCallInfo";
             this.lblCallInfo.Size = new System.Drawing.Size(414, 39);
             this.lblCallInfo.TabIndex = 0;
@@ -244,9 +261,9 @@
             this.groupControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.groupControl4.Controls.Add(this.labelControl3);
             this.groupControl4.Controls.Add(this.lblWaitCountPatient);
-            this.groupControl4.Location = new System.Drawing.Point(12, 338);
+            this.groupControl4.Location = new System.Drawing.Point(12, 288);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(398, 160);
+            this.groupControl4.Size = new System.Drawing.Size(398, 135);
             this.groupControl4.TabIndex = 2;
             this.groupControl4.Text = "groupControl2";
             // 
@@ -261,7 +278,7 @@
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl3.Location = new System.Drawing.Point(3, 31);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(395, 49);
+            this.labelControl3.Size = new System.Drawing.Size(134, 49);
             this.labelControl3.TabIndex = 0;
             this.labelControl3.Text = "等待人数:";
             // 
@@ -276,10 +293,10 @@
             this.lblWaitCountPatient.Appearance.Options.UseTextOptions = true;
             this.lblWaitCountPatient.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblWaitCountPatient.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblWaitCountPatient.Location = new System.Drawing.Point(203, 93);
+            this.lblWaitCountPatient.Location = new System.Drawing.Point(203, 66);
             this.lblWaitCountPatient.Name = "lblWaitCountPatient";
             this.lblWaitCountPatient.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
-            this.lblWaitCountPatient.Size = new System.Drawing.Size(172, 46);
+            this.lblWaitCountPatient.Size = new System.Drawing.Size(172, 50);
             this.lblWaitCountPatient.TabIndex = 1;
             this.lblWaitCountPatient.Text = "1";
             // 
@@ -288,9 +305,9 @@
             this.groupControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.groupControl3.Controls.Add(this.labelControl4);
             this.groupControl3.Controls.Add(this.lblNextPatient);
-            this.groupControl3.Location = new System.Drawing.Point(12, 172);
+            this.groupControl3.Location = new System.Drawing.Point(12, 147);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(398, 160);
+            this.groupControl3.Size = new System.Drawing.Size(398, 135);
             this.groupControl3.TabIndex = 2;
             this.groupControl3.Text = "groupControl2";
             // 
@@ -305,7 +322,7 @@
             this.labelControl4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl4.Location = new System.Drawing.Point(3, 31);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(395, 49);
+            this.labelControl4.Size = new System.Drawing.Size(134, 49);
             this.labelControl4.TabIndex = 0;
             this.labelControl4.Text = "准备病人:";
             // 
@@ -320,56 +337,12 @@
             this.lblNextPatient.Appearance.Options.UseTextOptions = true;
             this.lblNextPatient.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblNextPatient.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblNextPatient.Location = new System.Drawing.Point(203, 93);
+            this.lblNextPatient.Location = new System.Drawing.Point(203, 70);
             this.lblNextPatient.Name = "lblNextPatient";
             this.lblNextPatient.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
-            this.lblNextPatient.Size = new System.Drawing.Size(172, 46);
+            this.lblNextPatient.Size = new System.Drawing.Size(172, 50);
             this.lblNextPatient.TabIndex = 1;
             this.lblNextPatient.Text = "某某某";
-            // 
-            // groupControl2
-            // 
-            this.groupControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.groupControl2.Controls.Add(this.labelControl1);
-            this.groupControl2.Controls.Add(this.lblCurrentPatient);
-            this.groupControl2.Location = new System.Drawing.Point(12, 6);
-            this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(398, 160);
-            this.groupControl2.TabIndex = 2;
-            this.groupControl2.Text = "groupControl2";
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(3, 31);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(392, 49);
-            this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "正在治疗:";
-            // 
-            // lblCurrentPatient
-            // 
-            this.lblCurrentPatient.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCurrentPatient.Appearance.Font = new System.Drawing.Font("Tahoma", 28F);
-            this.lblCurrentPatient.Appearance.ForeColor = System.Drawing.Color.White;
-            this.lblCurrentPatient.Appearance.Options.UseFont = true;
-            this.lblCurrentPatient.Appearance.Options.UseForeColor = true;
-            this.lblCurrentPatient.Appearance.Options.UseTextOptions = true;
-            this.lblCurrentPatient.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.lblCurrentPatient.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblCurrentPatient.Location = new System.Drawing.Point(203, 93);
-            this.lblCurrentPatient.Name = "lblCurrentPatient";
-            this.lblCurrentPatient.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
-            this.lblCurrentPatient.Size = new System.Drawing.Size(172, 46);
-            this.lblCurrentPatient.TabIndex = 1;
-            this.lblCurrentPatient.Text = "某某某";
             // 
             // CurrentPatientBox
             // 
@@ -378,7 +351,7 @@
             this.CurrentPatientBox.Controls.Add(this.lblCurrentInfo);
             this.CurrentPatientBox.Location = new System.Drawing.Point(12, 6);
             this.CurrentPatientBox.Name = "CurrentPatientBox";
-            this.CurrentPatientBox.Size = new System.Drawing.Size(398, 160);
+            this.CurrentPatientBox.Size = new System.Drawing.Size(398, 135);
             this.CurrentPatientBox.TabIndex = 2;
             this.CurrentPatientBox.Text = "groupControl2";
             // 
@@ -393,7 +366,7 @@
             this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl2.Location = new System.Drawing.Point(6, 31);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(189, 49);
+            this.labelControl2.Size = new System.Drawing.Size(131, 49);
             this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "当前治疗:";
             // 
@@ -408,10 +381,10 @@
             this.lblCurrentInfo.Appearance.Options.UseTextOptions = true;
             this.lblCurrentInfo.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblCurrentInfo.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblCurrentInfo.Location = new System.Drawing.Point(203, 93);
+            this.lblCurrentInfo.Location = new System.Drawing.Point(203, 73);
             this.lblCurrentInfo.Name = "lblCurrentInfo";
             this.lblCurrentInfo.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
-            this.lblCurrentInfo.Size = new System.Drawing.Size(172, 46);
+            this.lblCurrentInfo.Size = new System.Drawing.Size(172, 50);
             this.lblCurrentInfo.TabIndex = 1;
             this.lblCurrentInfo.Text = "某某某";
             // 
@@ -427,31 +400,7 @@
             // 
             // callPatientTimer
             // 
-            this.callPatientTimer.Interval = 10;
             this.callPatientTimer.Tick += new System.EventHandler(this.callPatientTimer_Tick);
-            // 
-            // lblRootNameBG
-            // 
-            this.lblRootNameBG.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblRootNameBG.Image = global::CallServicePro.Properties.Resources.title;
-            this.lblRootNameBG.Location = new System.Drawing.Point(0, 0);
-            this.lblRootNameBG.Name = "lblRootNameBG";
-            this.lblRootNameBG.Size = new System.Drawing.Size(322, 99);
-            this.lblRootNameBG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.lblRootNameBG.TabIndex = 2;
-            this.lblRootNameBG.TabStop = false;
-            // 
-            // pictureEdit1
-            // 
-            this.pictureEdit1.EditValue = global::CallServicePro.Properties.Resources.logo;
-            this.pictureEdit1.Location = new System.Drawing.Point(3, 12);
-            this.pictureEdit1.Name = "pictureEdit1";
-            this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
-            this.pictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Size = new System.Drawing.Size(329, 79);
-            this.pictureEdit1.TabIndex = 0;
             // 
             // FrmVideoPlayer
             // 
@@ -470,6 +419,8 @@
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lblRootNameBG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
@@ -481,13 +432,9 @@
             this.groupControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
-            this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.CurrentPatientBox)).EndInit();
             this.CurrentPatientBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblRootNameBG)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -515,9 +462,6 @@
         private DevExpress.XtraEditors.GroupControl groupControl3;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl lblNextPatient;
-        private DevExpress.XtraEditors.GroupControl groupControl2;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.LabelControl lblCurrentPatient;
         private DevExpress.XtraEditors.GroupControl groupControl4;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl lblWaitCountPatient;

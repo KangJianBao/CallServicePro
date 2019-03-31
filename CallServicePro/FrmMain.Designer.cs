@@ -52,7 +52,7 @@
             // 
             this.txtLog.Location = new System.Drawing.Point(12, 51);
             this.txtLog.Name = "txtLog";
-            this.txtLog.Size = new System.Drawing.Size(463, 250);
+            this.txtLog.Size = new System.Drawing.Size(786, 368);
             this.txtLog.TabIndex = 0;
             this.txtLog.Text = "";
             // 
@@ -83,7 +83,7 @@
             // btnSet
             // 
             this.btnSet.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSet.ImageOptions.Image")));
-            this.btnSet.Location = new System.Drawing.Point(389, 13);
+            this.btnSet.Location = new System.Drawing.Point(712, 12);
             this.btnSet.Name = "btnSet";
             this.btnSet.Size = new System.Drawing.Size(86, 32);
             this.btnSet.TabIndex = 5;
@@ -94,7 +94,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(487, 323);
+            this.ClientSize = new System.Drawing.Size(810, 431);
             this.Controls.Add(this.btnSet);
             this.Controls.Add(this.btnStopService);
             this.Controls.Add(this.txtLog);

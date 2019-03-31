@@ -42,7 +42,7 @@ namespace CallServicePro
             lblRoomName.Text = roomName;
             lblRoomName.BackColor = Color.Transparent;
             lblRoomName.Parent = lblRootNameBG;
-            
+            if (isAnimation) { callPatientTimer.Enabled = true; };
 
         }
         
@@ -164,11 +164,13 @@ namespace CallServicePro
         /// <param name="e"></param>
         private void callPatientTimer_Tick(object sender, EventArgs e)
         {
+            //上下滚动
             lblCallInfo.Top += 1;
             if (lblCallInfo.Bottom > CallPatientBox.Height)
             {
                 lblCallInfo.Top = 0;
             }
+
         }
        
         /// <summary>
