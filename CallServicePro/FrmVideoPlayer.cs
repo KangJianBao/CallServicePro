@@ -22,6 +22,8 @@ namespace CallServicePro
         private string serverIP= ConfigurationManager.AppSettings["ServerIP"];
         private string serverPort = ConfigurationManager.AppSettings["ServerPort"];
         private string serverListen = ConfigurationManager.AppSettings["ServerListen"];
+        private bool isAnimation = Convert.ToBoolean(ConfigurationManager.AppSettings["IsAnimation"]);
+        private string roomName = ConfigurationManager.AppSettings["RoomName"];
 
         //声明一个用于连接通信的Socket
         private Socket socketSend;
@@ -37,7 +39,7 @@ namespace CallServicePro
             //给Split左侧Pancel1设置背景颜色
             splitContainerControl1.Panel1.BackColor = Color.FromArgb(0, 71, 182);
             //科室名称
-            lblRoomName.Text = ConfigurationManager.AppSettings["RoomName"];
+            lblRoomName.Text = roomName;
             lblRoomName.BackColor = Color.Transparent;
             lblRoomName.Parent = lblRootNameBG;
             

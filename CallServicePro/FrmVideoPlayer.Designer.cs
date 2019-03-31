@@ -36,8 +36,6 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.lblRoomName = new DevExpress.XtraEditors.LabelControl();
-            this.lblRootNameBG = new System.Windows.Forms.PictureBox();
-            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.lblScrollPlay = new DevExpress.XtraEditors.LabelControl();
             this.spTimer = new System.Windows.Forms.Timer(this.components);
@@ -58,12 +56,12 @@
             this.lblCurrentInfo = new DevExpress.XtraEditors.LabelControl();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.callPatientTimer = new System.Windows.Forms.Timer(this.components);
+            this.lblRootNameBG = new System.Windows.Forms.PictureBox();
+            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lblRootNameBG)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
@@ -79,6 +77,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.CurrentPatientBox)).BeginInit();
             this.CurrentPatientBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblRootNameBG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // dtTimer
@@ -164,35 +164,12 @@
             this.lblRoomName.TabIndex = 1;
             this.lblRoomName.Text = "放疗科加速器";
             // 
-            // lblRootNameBG
-            // 
-            this.lblRootNameBG.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblRootNameBG.Image = global::CallServicePro.Properties.Resources.title;
-            this.lblRootNameBG.Location = new System.Drawing.Point(0, 0);
-            this.lblRootNameBG.Name = "lblRootNameBG";
-            this.lblRootNameBG.Size = new System.Drawing.Size(322, 99);
-            this.lblRootNameBG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.lblRootNameBG.TabIndex = 2;
-            this.lblRootNameBG.TabStop = false;
-            // 
-            // pictureEdit1
-            // 
-            this.pictureEdit1.EditValue = global::CallServicePro.Properties.Resources.logo;
-            this.pictureEdit1.Location = new System.Drawing.Point(3, 12);
-            this.pictureEdit1.Name = "pictureEdit1";
-            this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
-            this.pictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Size = new System.Drawing.Size(329, 79);
-            this.pictureEdit1.TabIndex = 0;
-            // 
             // panelControl2
             // 
             this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl2.Controls.Add(this.lblScrollPlay);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl2.Location = new System.Drawing.Point(0, 1055);
+            this.panelControl2.Location = new System.Drawing.Point(0, 695);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(1128, 45);
             this.panelControl2.TabIndex = 2;
@@ -229,7 +206,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.axWindowsMediaPlayer1);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1128, 935);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1128, 575);
             this.splitContainerControl1.SplitterPosition = 420;
             this.splitContainerControl1.TabIndex = 3;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -239,9 +216,9 @@
             this.CallPatientBox.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.CallPatientBox.Controls.Add(this.lblCallInfo);
             this.CallPatientBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.CallPatientBox.Location = new System.Drawing.Point(0, 597);
+            this.CallPatientBox.Location = new System.Drawing.Point(0, 504);
             this.CallPatientBox.Name = "CallPatientBox";
-            this.CallPatientBox.Size = new System.Drawing.Size(420, 338);
+            this.CallPatientBox.Size = new System.Drawing.Size(420, 71);
             this.CallPatientBox.TabIndex = 2;
             this.CallPatientBox.Text = "groupControl2";
             // 
@@ -249,18 +226,18 @@
             // 
             this.lblCallInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCallInfo.Appearance.Font = new System.Drawing.Font("Tahoma", 32F);
-            this.lblCallInfo.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lblCallInfo.Appearance.Font = new System.Drawing.Font("Tahoma", 24F);
+            this.lblCallInfo.Appearance.ForeColor = System.Drawing.Color.Black;
             this.lblCallInfo.Appearance.Options.UseFont = true;
             this.lblCallInfo.Appearance.Options.UseForeColor = true;
             this.lblCallInfo.Appearance.Options.UseTextOptions = true;
             this.lblCallInfo.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblCallInfo.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.lblCallInfo.Location = new System.Drawing.Point(3, 159);
+            this.lblCallInfo.Location = new System.Drawing.Point(3, 3);
             this.lblCallInfo.Name = "lblCallInfo";
-            this.lblCallInfo.Size = new System.Drawing.Size(407, 104);
+            this.lblCallInfo.Size = new System.Drawing.Size(414, 39);
             this.lblCallInfo.TabIndex = 0;
-            this.lblCallInfo.Text = "请 某某某 到加速器一室治疗";
+            this.lblCallInfo.Text = "请某某某到加速器一室治疗";
             // 
             // groupControl4
             // 
@@ -445,7 +422,7 @@
             this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(0, 0);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(696, 935);
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(696, 575);
             this.axWindowsMediaPlayer1.TabIndex = 0;
             // 
             // callPatientTimer
@@ -453,11 +430,34 @@
             this.callPatientTimer.Interval = 10;
             this.callPatientTimer.Tick += new System.EventHandler(this.callPatientTimer_Tick);
             // 
+            // lblRootNameBG
+            // 
+            this.lblRootNameBG.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblRootNameBG.Image = global::CallServicePro.Properties.Resources.title;
+            this.lblRootNameBG.Location = new System.Drawing.Point(0, 0);
+            this.lblRootNameBG.Name = "lblRootNameBG";
+            this.lblRootNameBG.Size = new System.Drawing.Size(322, 99);
+            this.lblRootNameBG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.lblRootNameBG.TabIndex = 2;
+            this.lblRootNameBG.TabStop = false;
+            // 
+            // pictureEdit1
+            // 
+            this.pictureEdit1.EditValue = global::CallServicePro.Properties.Resources.logo;
+            this.pictureEdit1.Location = new System.Drawing.Point(3, 12);
+            this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
+            this.pictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit1.Size = new System.Drawing.Size(329, 79);
+            this.pictureEdit1.TabIndex = 0;
+            // 
             // FrmVideoPlayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1128, 1100);
+            this.ClientSize = new System.Drawing.Size(1128, 740);
             this.Controls.Add(this.splitContainerControl1);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
@@ -470,8 +470,6 @@
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.lblRootNameBG)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
@@ -488,6 +486,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.CurrentPatientBox)).EndInit();
             this.CurrentPatientBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblRootNameBG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

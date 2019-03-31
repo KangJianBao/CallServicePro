@@ -58,6 +58,13 @@ namespace CallServicePro
             txtLog.Text = "";
             txtLog.Focus();
         }
+
+        private void btnSet_Click(object sender, EventArgs e)
+        {
+            FrmSet frmSet = new FrmSet();
+            frmSet.ShowDialog();
+
+        }
     }
 
     public delegate void ShowMsgDelegate(String msg);

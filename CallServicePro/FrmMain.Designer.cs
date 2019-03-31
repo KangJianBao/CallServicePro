@@ -29,15 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.btnClearLog = new DevExpress.XtraEditors.SimpleButton();
             this.txtLog = new System.Windows.Forms.RichTextBox();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.btnStopService = new DevExpress.XtraEditors.SimpleButton();
             this.btnStartService = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSet = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
             // 
             // btnClearLog
             // 
+            this.btnClearLog.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClearLog.ImageOptions.Image")));
             this.btnClearLog.Location = new System.Drawing.Point(196, 12);
             this.btnClearLog.Name = "btnClearLog";
             this.btnClearLog.Size = new System.Drawing.Size(86, 33);
@@ -77,11 +80,22 @@
             this.btnStartService.Text = "启动服务";
             this.btnStartService.Click += new System.EventHandler(this.btnStartService_Click);
             // 
+            // btnSet
+            // 
+            this.btnSet.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSet.ImageOptions.Image")));
+            this.btnSet.Location = new System.Drawing.Point(389, 13);
+            this.btnSet.Name = "btnSet";
+            this.btnSet.Size = new System.Drawing.Size(86, 32);
+            this.btnSet.TabIndex = 5;
+            this.btnSet.Text = "设置";
+            this.btnSet.Click += new System.EventHandler(this.btnSet_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(487, 323);
+            this.Controls.Add(this.btnSet);
             this.Controls.Add(this.btnStopService);
             this.Controls.Add(this.txtLog);
             this.Controls.Add(this.btnClearLog);
@@ -102,6 +116,7 @@
         private System.Windows.Forms.RichTextBox txtLog;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
         private DevExpress.XtraEditors.SimpleButton btnStopService;
+        private DevExpress.XtraEditors.SimpleButton btnSet;
     }
 }
 
