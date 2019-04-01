@@ -47,8 +47,12 @@ namespace CallServicePro
 
         private void btnStopService_Click(object sender, EventArgs e)
         {
-            frmVideo.Close();
-            ShowMsg("叫号服务已停止");
+            if(frmVideo != null)
+            {
+                frmVideo.Close();
+                ShowMsg("叫号服务已停止");
+                
+            }
             btnStartService.Enabled = true;
             btnStopService.Enabled = false;
         }

@@ -53,7 +53,7 @@
             this.CurrentPatientBox = new DevExpress.XtraEditors.GroupControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.lblCurrentInfo = new DevExpress.XtraEditors.LabelControl();
-            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.wmPlayer = new AxWMPLib.AxWindowsMediaPlayer();
             this.callPatientTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -73,7 +73,7 @@
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CurrentPatientBox)).BeginInit();
             this.CurrentPatientBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmPlayer)).BeginInit();
             this.SuspendLayout();
             // 
             // dtTimer
@@ -221,7 +221,7 @@
             this.splitContainerControl1.Panel1.Controls.Add(this.groupControl3);
             this.splitContainerControl1.Panel1.Controls.Add(this.CurrentPatientBox);
             this.splitContainerControl1.Panel1.Text = "Panel1";
-            this.splitContainerControl1.Panel2.Controls.Add(this.axWindowsMediaPlayer1);
+            this.splitContainerControl1.Panel2.Controls.Add(this.wmPlayer);
             this.splitContainerControl1.Panel2.Text = "Panel2";
             this.splitContainerControl1.Size = new System.Drawing.Size(1128, 575);
             this.splitContainerControl1.SplitterPosition = 420;
@@ -244,7 +244,7 @@
             this.lblCallInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCallInfo.Appearance.Font = new System.Drawing.Font("Tahoma", 24F);
-            this.lblCallInfo.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblCallInfo.Appearance.ForeColor = System.Drawing.Color.White;
             this.lblCallInfo.Appearance.Options.UseFont = true;
             this.lblCallInfo.Appearance.Options.UseForeColor = true;
             this.lblCallInfo.Appearance.Options.UseTextOptions = true;
@@ -388,15 +388,15 @@
             this.lblCurrentInfo.TabIndex = 1;
             this.lblCurrentInfo.Text = "某某某";
             // 
-            // axWindowsMediaPlayer1
+            // wmPlayer
             // 
-            this.axWindowsMediaPlayer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(0, 0);
-            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
-            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(696, 575);
-            this.axWindowsMediaPlayer1.TabIndex = 0;
+            this.wmPlayer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wmPlayer.Enabled = true;
+            this.wmPlayer.Location = new System.Drawing.Point(0, 0);
+            this.wmPlayer.Name = "wmPlayer";
+            this.wmPlayer.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmPlayer.OcxState")));
+            this.wmPlayer.Size = new System.Drawing.Size(696, 575);
+            this.wmPlayer.TabIndex = 0;
             // 
             // callPatientTimer
             // 
@@ -414,6 +414,7 @@
             this.Name = "FrmVideoPlayer";
             this.Text = "FrmVideoPlayer";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmVideoPlayer_FormClosing);
             this.Load += new System.EventHandler(this.FrmVideoPlayer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
@@ -434,7 +435,7 @@
             this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.CurrentPatientBox)).EndInit();
             this.CurrentPatientBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmPlayer)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -449,7 +450,7 @@
         private DevExpress.XtraEditors.LabelControl lblScrollPlay;
         private System.Windows.Forms.Timer spTimer;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
-        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
+        private AxWMPLib.AxWindowsMediaPlayer wmPlayer;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.LabelControl lblRoomName;
         private System.Windows.Forms.PictureBox lblRootNameBG;

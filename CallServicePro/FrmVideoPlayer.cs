@@ -25,8 +25,13 @@ namespace CallServicePro
         private bool isAnimation = Convert.ToBoolean(ConfigurationManager.AppSettings["IsAnimation"]);
         private string roomName = ConfigurationManager.AppSettings["RoomName"];
 
-        //声明一个用于连接通信的Socket
+        //声明一个用于监听连接的Socket
+        private Socket socketWatch;
+        //声明一个用于通信发送信息的Socket
         private Socket socketSend;
+
+        
+        
         //向主窗体发送日志信息委托变量 
         public ShowMsgDelegate msgDelegate;
         public FrmVideoPlayer()
@@ -44,6 +49,7 @@ namespace CallServicePro
             lblRoomName.Parent = lblRootNameBG;
             if (isAnimation) { callPatientTimer.Enabled = true; };
 
+            
         }
         
         /// <summary>
@@ -68,17 +74,17 @@ namespace CallServicePro
         void InitSocket()
         {
             //【第一步】创建一个监听的socket
-            Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            socketWatch = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             IPAddress ip = IPAddress.Parse(serverIP);
             IPEndPoint port = new IPEndPoint(ip, Convert.ToInt32(serverPort));
             //【第二步】绑定监听端口
-            socket.Bind(port);
+            socketWatch.Bind(port);
             //【第三步】Listen
-            socket.Listen(Convert.ToInt32(serverListen));
+            socketWatch.Listen(Convert.ToInt32(serverListen));
 
             Thread th = new Thread(SocketAccept);
             th.IsBackground = true;
-            th.Start(socket);
+            th.Start(socketWatch);
             msgDelegate("叫号服务已启动，等待客户端连接");
         }
 
@@ -92,11 +98,20 @@ namespace CallServicePro
 
             while (true)
             {
-                socketSend = socket.Accept();
+                try
+                {
+                    socketSend = socket.Accept();
 
-                Thread th = new Thread(Recive);
-                th.IsBackground = true;
-                th.Start(socketSend);
+                    Thread th = new Thread(Recive);
+                    th.IsBackground = true;
+                    th.Start(socketSend);
+                }
+                catch (Exception)
+                {
+
+                    
+                }
+                
             }
         }
         /// <summary>
@@ -186,6 +201,9 @@ namespace CallServicePro
         {
             //初始化Socket
             InitSocket();
+            wmPlayer.stretchToFit = true;
+            string path = @"‪C:\Users\Administrator\Desktop\1.avi";
+            wmPlayer.openPlayer(path);
 
         }
 
@@ -211,5 +229,16 @@ namespace CallServicePro
 
         }
 
+        private void FrmVideoPlayer_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(socketWatch != null)
+            {
+                socketWatch.Close();
+            }
+            if(socketSend != null)
+            {
+                socketSend.Close();
+            }
+        }
     }
 }
